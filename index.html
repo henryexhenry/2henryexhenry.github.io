@@ -229,6 +229,372 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://henryexhenry.github.io/2019/09/29/Pandas-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Henry Wong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/Pandas-Notes/" itemprop="url">Pandas_Notes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T22:13:27+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Some-useful-Pandas-functions"><a href="#Some-useful-Pandas-functions" class="headerlink" title="Some useful Pandas functions"></a>Some useful Pandas functions</h1><h2 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h2><ul>
+<li><p>Export dataframe to Excel</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">writer = pd.ExcelWriter(filepath)</span><br><span class="line">df1.to_excel(excel_writer=writer,sheet_name=<span class="string">'sheet1'</span>, index=<span class="literal">False</span>, na_rep=<span class="literal">False</span>) <span class="comment"># na_rep: NAN replace</span></span><br><span class="line">df2.to_excel(excel_writer=writer, sheet_name=<span class="string">'sheet2'</span>, index=<span class="literal">False</span>, na_rep=<span class="literal">False</span>)</span><br><span class="line">writer.save()</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Export dataframe to CSV</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1.to_csv(mode=<span class="string">'a'</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Groupby"><a href="#Groupby" class="headerlink" title="Groupby"></a>Groupby</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sectors = df1.groupby([<span class="string">"Name"</span>, <span class="string">"Sector"</span>])</span><br><span class="line"><span class="comment"># return groupby object</span></span><br><span class="line"></span><br><span class="line">sectors.size()</span><br><span class="line"><span class="comment"># return dataframe (frequency of each value)</span></span><br><span class="line"></span><br><span class="line">sectors.get_group([<span class="string">"Henry"</span>, <span class="string">"Energy"</span>])</span><br><span class="line"><span class="comment"># return dataframe</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Concatenate"><a href="#Concatenate" class="headerlink" title="Concatenate"></a>Concatenate</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">result = pd.concat([df1, df2], axis=<span class="number">0</span>, join=<span class="string">'outer'</span>, ignore_index=<span class="literal">False</span>, keys=[<span class="string">'ID'</span>,<span class="string">'name'</span>,<span class="string">'gender'</span>],</span><br><span class="line">          levels=<span class="literal">None</span>, names=<span class="literal">None</span>, verify_integrity=<span class="literal">False</span>, copy=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># return dataframe</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shortcout</span></span><br><span class="line">result = df1.append(series1)</span><br><span class="line"><span class="comment"># return dataframe</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html" target="_blank" rel="noopener">REF</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://henryexhenry.github.io/2019/09/29/project-marvel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Henry Wong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/project-marvel/" itemprop="url">Project Marvel mashup page</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T22:08:37+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Mashup-site-by-Django"><a href="#Mashup-site-by-Django" class="headerlink" title="Mashup site by Django"></a>Mashup site by Django</h1><p align="center">
+    <img src="https://i.loli.net/2019/09/28/O2rgluRnKFBiqmD.png" width="400" height="400">
+</p>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>After the last year’s marvel avengers 3, there were various predictions about this movie on the Internet. Now that the movie is about to be released, we are also very excited as a fan. The first official trailer has been released by Marvel Entertainment in the end of last year, and the discussion about Marvel Universe has not stopped until now. However, there are too many resources on the Internet, and some low-quality resources will waste our time. With this opportunity, we decided to make a website about marvel avenger 4 mashup to help Marvel fans have a better chance to get resources of the Avengers, but this report is not going to introduce too much about marvel avengers 4.</p>
+<h2 id="Problem-statement"><a href="#Problem-statement" class="headerlink" title="Problem statement"></a>Problem statement</h2><ul>
+<li>choosing technologies</li>
+<li>techniques of web crawling</li>
+<li>indexing by google in the first page result</li>
+</ul>
+<h2 id="Design-and-implementation"><a href="#Design-and-implementation" class="headerlink" title="Design and implementation"></a>Design and implementation</h2><ul>
+<li><p>Architechture of our mashup</p>
+<p><img src="https://i.loli.net/2019/09/28/QpLcz8hZw46O9Nn.png" alt="architecture of the mashup page.png"></p>
+<p>The home page is a mashup of differnt kinds of information. and we have specific categories for displaying only one kind of data.</p>
+<p>In the home page and hero page, we implemmented a voting function. Users can vote a superhero if user think that the hero will appear in Avengers 4 movie.</p>
+</li>
+<li><p>Infomation collecting techniques</p>
+<ul>
+<li><p>Web crawling</p>
+<p><img src="https://i.loli.net/2019/09/28/SQO3fqRWby6FjtH.png" alt="DataCollection.png"></p>
+<p>We used requests package to send HTTP request for getting html text from the target website, than we leverage beautifulsoup to parse the html text into html object, it helps us to locate the information we want.</p>
+<p>Once we found the desire information, we store it into a json file, such that we finish collecting web information</p>
+<ul>
+<li><p>APIs introduction</p>
+<p>  Some sources provide their own APIs, it saved our time on locating target information. In this project, we have used youtube, and marvel.com APIs.</p>
+<ul>
+<li>Marvel.com API<ul>
+<li>apply for an account, get public key, private key</li>
+<li>sum = random num + 2 keys</li>
+<li>hash by md5 algorithm</li>
+<li>concatenate all the above information into url</li>
+</ul>
+</li>
+<li>Youtube API<ul>
+<li>connect to youtube iframe_api server</li>
+<li>input the video_id</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Techniques uesd to show the data</p>
+<ul>
+<li>Data flow inside the webapp<ul>
+<li>We collect information from sources like rotten tomato, Marvel.com and Youtube into Json file for storage</li>
+<li>We use service to manipulate the data and choose the data that we need</li>
+<li>The Views will receive the data, it decide what data can be shown in template,</li>
+<li>The template decide how the data display on the screen</li>
+</ul>
+</li>
+<li>Data display techniques<ul>
+<li>Bootstrap give us powerful library for beautiful and neat UI layout.</li>
+<li>Card element and</li>
+<li>Popup function in bootstrap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Web server setup and web page development</p>
+<ul>
+<li><p>Django framework</p>
+<ul>
+<li><p>Why Django</p>
+<p>It is simple, it is easy to scaffold out a web app server, so that we can concentrate on the functionalities of the application. Also We need to do web crawling stuffs by using python, and Django is a popular framework for web development in python. So we decide to learn using Django as our web framework.</p>
+</li>
+<li><p>layout</p>
+<ul>
+<li><p>Bootstrap and font-awesome</p>
+<p>Bootstrap is a popular front-end library to build responsive website, it means that the website can tranfrom its layout to suit different size of screen, it can be simoutaniously suitable for computer screen and mobile phone screen which have huge difference in screen size.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Functionalities</p>
+<p><img src="https://i.loli.net/2019/09/28/jA7M4bqt5dNfKTD.png" alt="CharacterCard.png"></p>
+<ul>
+<li><p>Mashup of avengers4 information</p>
+<ul>
+<li>marvel API heroes</li>
+<li>rotten tomato News</li>
+<li>reddit posts</li>
+<li>Youtube trailer</li>
+</ul>
+</li>
+<li><p>Main functions</p>
+<p>The main function of our web app is to collect avengers4 relevant information shuch as text, image, and video, from different web sources including</p>
+<ul>
+<li>Marvel official site <strong>marvel.com</strong>,</li>
+<li>the popular film review aggregation website <strong>rotten-tomatoes</strong>,</li>
+<li>The famous social media forum <strong>reddit</strong></li>
+<li>and <strong>youtube</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
+<li><p>On-page</p>
+<p>  First, we have used On-page optimization techniques. Second, we added some meta information (HTML head tag), optimized the title of our website, added related description of our website, for the keywords (we added such as ‘marvel movie’, ‘mashup’, ‘ma4’, ‘marvel avengers 4’ and more). Third, for the contents, the contents in tags such as in <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code> are important for SEO. Fourth, created XML Sitemap. Fifth, we made Mobile device adapation. Keywords Meta information, Contents, Sitemap, Mobile device adapation are important for Google SEO in which descripted in Google SEO guide.</p>
+</li>
+<li><p>Off-page</p>
+<p>  We created a sitemap for our web page. It is an xml file of a language that is specifically used to read a computer. Sitemap is the search engine that uses this specification to allow website owners to use it to create a directory file containing all the pages in the site and provide crawler reading to the search engine. Just like a map, let the search engine know what pages are in the site.</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/09/28/1VFmbuBJDU8fMwr.png" alt="searchingscreenshot.png"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In conclusions, the design of web page is advanced, but lack of characteristics. Second, we did some SEO optimizations, but still have some work can be done. Third, We rank at the good positions when search ‘mashup page for marvel’, ‘ma4 mashup’ and ‘marvel avenger 4 mashup’ on Google. Finally, We used 3 sources, but there are more sources can be added. We also made a button for ticket purchase, so that users can go directly to purchase tickets after reading our website.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://henryexhenry.github.io/2019/09/19/Tutorial-of-Flask/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1170,7 +1536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1183,7 +1549,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

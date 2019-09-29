@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="VPN CVM Outline Aliyun,">
+  <meta name="keywords" content="Pandas,">
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="1. Setup Aliyun server Purchase Aliyun CVM  Lightweight application server  area: HK system image: CentOS package: 24 RMB/month or 34 RMB/month   Server setting  open Aliyun console navigate to firewa">
-<meta name="keywords" content="VPN CVM Outline Aliyun">
+<meta name="description" content="Some useful Pandas functionsExport Export dataframe to Excel 12345writer = pd.ExcelWriter(filepath)df1.to_excel(excel_writer=writer,sheet_name=&apos;sheet1&apos;, index=False, na_rep=False) # na_rep: NAN replac">
+<meta name="keywords" content="Pandas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Setup VPN with Aliyun server">
-<meta property="og:url" content="http://henryexhenry.github.io/2019/09/19/Setup-VPN-with-Aliyun-server/index.html">
+<meta property="og:title" content="Pandas_Notes">
+<meta property="og:url" content="http://henryexhenry.github.io/2019/09/29/Pandas-Notes/index.html">
 <meta property="og:site_name" content="Hy">
-<meta property="og:description" content="1. Setup Aliyun server Purchase Aliyun CVM  Lightweight application server  area: HK system image: CentOS package: 24 RMB/month or 34 RMB/month   Server setting  open Aliyun console navigate to firewa">
+<meta property="og:description" content="Some useful Pandas functionsExport Export dataframe to Excel 12345writer = pd.ExcelWriter(filepath)df1.to_excel(excel_writer=writer,sheet_name=&apos;sheet1&apos;, index=False, na_rep=False) # na_rep: NAN replac">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://getoutline.org/modern/img/manager_screenshot@2x.png">
-<meta property="og:image" content="https://getoutline.org/modern/img/clients_screenshot@2x.png">
-<meta property="og:updated_time" content="2019-09-19T08:03:18.470Z">
+<meta property="og:updated_time" content="2019-09-29T14:18:00.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Setup VPN with Aliyun server">
-<meta name="twitter:description" content="1. Setup Aliyun server Purchase Aliyun CVM  Lightweight application server  area: HK system image: CentOS package: 24 RMB/month or 34 RMB/month   Server setting  open Aliyun console navigate to firewa">
-<meta name="twitter:image" content="https://getoutline.org/modern/img/manager_screenshot@2x.png">
+<meta name="twitter:title" content="Pandas_Notes">
+<meta name="twitter:description" content="Some useful Pandas functionsExport Export dataframe to Excel 12345writer = pd.ExcelWriter(filepath)df1.to_excel(excel_writer=writer,sheet_name=&apos;sheet1&apos;, index=False, na_rep=False) # na_rep: NAN replac">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://henryexhenry.github.io/2019/09/19/Setup-VPN-with-Aliyun-server/">
+  <link rel="canonical" href="http://henryexhenry.github.io/2019/09/29/Pandas-Notes/">
 
 
 
 
 
-  <title>Setup VPN with Aliyun server | Hy</title>
+  <title>Pandas_Notes | Hy</title>
   
 
 
@@ -236,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://henryexhenry.github.io/2019/09/19/Setup-VPN-with-Aliyun-server/">
+    <link itemprop="mainEntityOfPage" href="http://henryexhenry.github.io/2019/09/29/Pandas-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Henry Wong">
@@ -253,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Setup VPN with Aliyun server</h1>
+          <h1 class="post-title" itemprop="name headline">Pandas_Notes</h1>
         
 
         <div class="post-meta">
@@ -265,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T15:45:42+08:00">
-                2019-09-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T22:13:27+08:00">
+                2019-09-29
               </time>
             
 
@@ -303,55 +300,22 @@
       
 
       
-        <h2 id="1-Setup-Aliyun-server"><a href="#1-Setup-Aliyun-server" class="headerlink" title="1. Setup Aliyun server"></a>1. Setup Aliyun server</h2><ul>
-<li><p><a href="https://common-buy.aliyun.com/?commodityCode=swas&userCode=aqyt0wx2&regionId=cn-hongkong#/buy" target="_blank" rel="noopener">Purchase Aliyun CVM</a></p>
+        <h1 id="Some-useful-Pandas-functions"><a href="#Some-useful-Pandas-functions" class="headerlink" title="Some useful Pandas functions"></a>Some useful Pandas functions</h1><h2 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h2><ul>
+<li><p>Export dataframe to Excel</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">writer = pd.ExcelWriter(filepath)</span><br><span class="line">df1.to_excel(excel_writer=writer,sheet_name=<span class="string">'sheet1'</span>, index=<span class="literal">False</span>, na_rep=<span class="literal">False</span>) <span class="comment"># na_rep: NAN replace</span></span><br><span class="line">df2.to_excel(excel_writer=writer, sheet_name=<span class="string">'sheet2'</span>, index=<span class="literal">False</span>, na_rep=<span class="literal">False</span>)</span><br><span class="line">writer.save()</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Lightweight application server</p>
+<li><p>Export dataframe to CSV</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1.to_csv(mode=<span class="string">'a'</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Groupby"><a href="#Groupby" class="headerlink" title="Groupby"></a>Groupby</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sectors = df1.groupby([<span class="string">"Name"</span>, <span class="string">"Sector"</span>])</span><br><span class="line"><span class="comment"># return groupby object</span></span><br><span class="line"></span><br><span class="line">sectors.size()</span><br><span class="line"><span class="comment"># return dataframe (frequency of each value)</span></span><br><span class="line"></span><br><span class="line">sectors.get_group([<span class="string">"Henry"</span>, <span class="string">"Energy"</span>])</span><br><span class="line"><span class="comment"># return dataframe</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Concatenate"><a href="#Concatenate" class="headerlink" title="Concatenate"></a>Concatenate</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">result = pd.concat([df1, df2], axis=<span class="number">0</span>, join=<span class="string">'outer'</span>, ignore_index=<span class="literal">False</span>, keys=[<span class="string">'ID'</span>,<span class="string">'name'</span>,<span class="string">'gender'</span>],</span><br><span class="line">          levels=<span class="literal">None</span>, names=<span class="literal">None</span>, verify_integrity=<span class="literal">False</span>, copy=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># return dataframe</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shortcout</span></span><br><span class="line">result = df1.append(series1)</span><br><span class="line"><span class="comment"># return dataframe</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>area: <strong>HK</strong></li>
-<li>system image: <strong>CentOS</strong></li>
-<li>package: <strong>24</strong> RMB/month or <strong>34</strong> RMB/month</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html" target="_blank" rel="noopener">REF</a></li>
 </ul>
-</li>
-<li><p>Server setting</p>
-<ul>
-<li>open Aliyun <strong>console</strong></li>
-<li>navigate to <strong>firewall</strong></li>
-<li>add <strong>new rule</strong></li>
-<li>add all <strong>TCP</strong> port 1/65535</li>
-<li>Done</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Outline-Manager"><a href="#2-Outline-Manager" class="headerlink" title="2. Outline Manager"></a>2. Outline Manager</h2><ul>
-<li>Get Outline Manager (OM)<ul>
-<li><a href="https://getoutline.org/zh-CN/home" target="_blank" rel="noopener"><code>https://getoutline.org/zh-CN/home</code></a></li>
-<li>Open OM</li>
-<li>Set up Outline on your phone or other device</li>
-<li>follow the instruction inside<ul>
-<li>copy the code into your CentOS server console</li>
-<li>paste the apiUrl into OM<br><img src="https://getoutline.org/modern/img/manager_screenshot@2x.png" alt="image"></li>
-</ul>
-</li>
-<li>click the button at right hand side of <code>My access key</code></li>
-<li>connect this device</li>
-<li>copy the ss key</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-Outline"><a href="#3-Outline" class="headerlink" title="3. Outline"></a>3. Outline</h2><ul>
-<li>Get the app <code>Outline</code> in your phone<ul>
-<li>AppStore</li>
-<li><a href="https://getoutline.org/zh-CN/home" target="_blank" rel="noopener"><code>https://getoutline.org/zh-CN/home</code></a></li>
-</ul>
-</li>
-<li>add access key</li>
-<li>paste the ss key from OM</li>
-<li>DONE<br><img src="https://getoutline.org/modern/img/clients_screenshot@2x.png" alt="Outline"></li>
-</ul>
-<h2 id="create-new-access-key"><a href="#create-new-access-key" class="headerlink" title="create new access key"></a>create new access key</h2><blockquote>
-<p>sudo bash install_server.sh –keys-port 2890</p>
-</blockquote>
 
       
     </div>
@@ -369,7 +333,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/VPN-CVM-Outline-Aliyun/" rel="tag"># VPN CVM Outline Aliyun</a>
+            <a href="/tags/Pandas/" rel="tag"># Pandas</a>
           
         </div>
       
@@ -382,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/19/Hexo-blog/" rel="next" title="Tutorial of building a free blog with Hexo, Github and Node.js">
-                <i class="fa fa-chevron-left"></i> Tutorial of building a free blog with Hexo, Github and Node.js
+              <a href="/2019/09/29/project-marvel/" rel="next" title="Project Marvel mashup page">
+                <i class="fa fa-chevron-left"></i> Project Marvel mashup page
               </a>
             
           </div>
@@ -391,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/19/Tutorial-of-CVM-server-setup/" rel="prev" title="Tutorial of CVM server setup">
-                Tutorial of CVM server setup <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -517,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Setup-Aliyun-server"><span class="nav-number">1.</span> <span class="nav-text">1. Setup Aliyun server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Outline-Manager"><span class="nav-number">2.</span> <span class="nav-text">2. Outline Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Outline"><span class="nav-number">3.</span> <span class="nav-text">3. Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-new-access-key"><span class="nav-number">4.</span> <span class="nav-text">create new access key</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-useful-Pandas-functions"><span class="nav-number">1.</span> <span class="nav-text">Some useful Pandas functions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Export"><span class="nav-number">1.1.</span> <span class="nav-text">Export</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Groupby"><span class="nav-number">1.2.</span> <span class="nav-text">Groupby</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Concatenate"><span class="nav-number">1.3.</span> <span class="nav-text">Concatenate</span></a></li></ol></li></ol></div>
             
 
           </div>
